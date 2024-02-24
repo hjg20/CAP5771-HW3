@@ -8,16 +8,23 @@ def question1():
     answers = {}
 
     # type: bool (True/False)
-    answers["(a)"] = -1
+    answers["(a)"] = True
 
     # type: explanatory string (at least four words)
-    answers["(a) explain"] = ""
+    answers["(a) explain"] = "K-means assumes that clusters will be globular. \
+                              Agglomerative hierarchical clustering's ability to accommodate various cluster \
+                              shapes and its detailed hierarchical output make it better suited for handling \
+                              outliers compared to K-means."
 
     # type: bool (True/False)
-    answers["(b)"] = -1
+    answers["(b)"] = True
 
     # type: explanatory string (at least four words)
-    answers["(b) explain"] = ""
+    answers["(b) explain"] = "For Kmeans, randomized centroid selections can mean that your final clusters will \
+                              be different every time you run the algorithm. For agglomerative hierarchical \
+                              clustering, every point begins as a cluster and clusters merge due to proximity. \
+                              Therefore, different runs of this clustering method will always produce the same \
+                              clusters, given the same dataset is used. "
 
     # type: bool (True/False)
     answers["(c)"] = -1
