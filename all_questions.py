@@ -12,77 +12,77 @@ def question1():
 
     # type: explanatory string (at least four words)
     answers["(a) explain"] = "K-means assumes that clusters will be globular. \
-                              Agglomerative hierarchical clustering's ability to accommodate various cluster \
-                              shapes and its detailed hierarchical output make it better suited for handling \
-                              outliers compared to K-means."
+    Agglomerative hierarchical clustering's ability to accommodate various cluster \
+    shapes and its detailed hierarchical output make it better suited for handling \
+    outliers compared to K-means."
 
     # type: bool (True/False)
     answers["(b)"] = True
 
     # type: explanatory string (at least four words)
     answers["(b) explain"] = "For Kmeans, randomized centroid selections can mean that your final clusters will \
-                              be different every time you run the algorithm. For agglomerative hierarchical \
-                              clustering, every point begins as a cluster and clusters merge due to proximity. \
-                              Therefore, different runs of this clustering method will always produce the same \
-                              clusters, given the same dataset is used. "
+    be different every time you run the algorithm. For agglomerative hierarchical \
+    clustering, every point begins as a cluster and clusters merge due to proximity. \
+    Therefore, different runs of this clustering method will always produce the same \
+    clusters, given the same dataset is used. "
 
     # type: bool (True/False)
     answers["(c)"] = False
 
     # type: explanatory string (at least four words)
     answers["(c) explain"] = 'Kmeans is much faster and uses less memory than agglomerative hierarchical \
-                              clustering, but cannot be labeled as "the most efficient". DBSCAN can be more \
-                              efficient if used for non-globular shapes and when handeling outliers.'
+    clustering, but cannot be labeled as "the most efficient". DBSCAN can be more \
+    efficient if used for non-globular shapes and when handeling outliers.'
 
     # type: bool (True/False)
     answers["(d)"] = False
 
     # type: explanatory string (at least four words)
     answers["(d) explain"] = "The standard kmeans algorithm does not involve splitting a cluster and picking \
-                              one of the points as a new centroid. The typical alogrithm involves randomly \
-                              picking centroids as intialization, computing new centroids as the mean \
-                              between all points chosen in the cluster, and repeating until convergence. \
-                              The SSE of the clustering, however, decreases little by little until it either \
-                              converges or is below a certian threshold."
+    one of the points as a new centroid. The typical alogrithm involves randomly \
+    picking centroids as intialization, computing new centroids as the mean \
+    between all points chosen in the cluster, and repeating until convergence. \
+    The SSE of the clustering, however, decreases little by little until it either \
+    converges or is below a certian threshold."
 
     # type: bool (True/False)
     answers["(e)"] = True
 
     # type: explanatory string (at least four words)
     answers["(e) explain"] = "Cohesion is the measure of how closely related points in a cluster are. Therefore, \
-                              as SSE decreases, points are closer together and cohesion increases."
+    as SSE decreases, points are closer together and cohesion increases."
 
     # type: bool (True/False)
     answers["(f)"] = True
     # type: explanatory string (at least four words)
     answers["(f) explain"] = "Separation is the measure of how distinct clusters are from on another, and is \
-                              measure by the SSB of clusters. Therefore, as SSB increases, separation increases."
+    measure by the SSB of clusters. Therefore, as SSB increases, separation increases."
 
     # type: bool (True/False)
     answers["(g)"] = True
 
     # type: explanatory string (at least four words)
     answers["(g) explain"] = "Cohesion measures the inner cluster relations, whereas separation measures how \
-                              separated a cluster is from other clusters. If the cohesion in a cluster is \
-                              increased (i.e., the cluster is tightly formed around the centroid), the separation \
-                              (i.e., the SSB from other clusters) does not necessarily increase as well."
+    separated a cluster is from other clusters. If the cohesion in a cluster is \
+    increased (i.e., the cluster is tightly formed around the centroid), the separation \
+    (i.e., the SSB from other clusters) does not necessarily increase as well."
 
     # type: bool (True/False)
     answers["(h)"] = False
 
     # type: explanatory string (at least four words)
     answers["(h) explain"] = "As the kmeans alogrithm interates, cluster shapes change and can thus be smaller and \
-                              more concise, or be more separated from eachother. Due to this, SSE+BSS does not \
-                              stay they same throughout the algorithm and thus is not a constant."
+    more concise, or be more separated from eachother. Due to this, SSE+BSS does not \
+    stay they same throughout the algorithm and thus is not a constant."
 
     # type: bool (True/False)
     answers["(i)"] = False
 
     # type: explanatory string (at least four words)
     answers["(i) explain"] = "Cohesion measures the inner cluster relations, whereas separation measures how \
-                              separated a cluster is from other clusters. If the cohesion in a cluster is \
-                              increased (i.e., the cluster is tightly formed around the centroid), the separation \
-                              (i.e., the SSB from other clusters) does not necessarily increase as well."
+    separated a cluster is from other clusters. If the cohesion in a cluster is \
+    increased (i.e., the cluster is tightly formed around the centroid), the separation \
+    (i.e., the SSB from other clusters) does not necessarily increase as well."
 
     return answers
 
@@ -98,22 +98,22 @@ def question2():
 
     # type: explanatory string (at least four words)
     answers["(a) explain"] = "Since the distance from each cirlce is greater than the radii of each circle, \
-                              each cirlce will be a cluster and will have a centroid at its center."
+    each cirlce will be a cluster and will have a centroid at its center."
 
     # type: bool (True/False)
     answers["(b)"] = False
 
     # type: explanatory string (at least four words)
     answers["(b) explain"] = "Since the kmeans algorithm uses euclidean distance as its metric for finding \
-                              clusters, the clusters will be globular and will contain points from both regions."
+    clusters, the clusters will be globular and will contain points from both regions."
 
     # type: bool (True/False)
     answers["(c)"] = True
 
     # type: explanatory string (at least four words)
     answers["(c) explain"] = "The cluster which is intialized with centroid of 12.5 will be empty due to there \
-                              being no points nearby to be assigned to it. 10 is closer to 7.75 than it is to \
-                              12.5 and 15 is closer to 17.25 than it is to 12.5."
+    being no points nearby to be assigned to it. 10 is closer to 7.75 than it is to \
+    12.5 and 15 is closer to 17.25 than it is to 12.5."
 
     return answers
 
@@ -128,10 +128,10 @@ def question3():
     answers["(a) SSE"] = "4*(R**2)"
 
     # type: a string that evaluates to a float
-    answers["(b) SSE"] = 7.5
+    answers["(b) SSE"] = "((a**2)+(b-r)**2)+(((a+r)**2)+(b**2))+((a**2)+(b+r)**2)+(((a-r)**2)+(b**2))"
 
     # type: a string that evaluates to a float
-    answers["(c) SSE"] = 7.5
+    answers["(c) SSE"] = "(2*(R/2)**2)+(2*(3*R/2)**2)+(4*(((R/2)**2)+(R**2)))"
 
     return answers
 
@@ -143,40 +143,45 @@ def question4():
     answers = {}
 
     # type: int
-    answers["(a) Circle (a)"] = 0
+    answers["(a) Circle (a)"] = 1
 
     # type: int
-    answers["(a) Circle (b)"] = 0
+    answers["(a) Circle (b)"] = 1
 
     # type: int
-    answers["(a) Circle (c)"] = 0
+    answers["(a) Circle (c)"] = 1
 
     # type: explanatory string (at least four words)
-    answers["(a) explain"] = ""
+    answers["(a) explain"] = "The centroid on the left has the majority of its points in A and the centroid \
+    on the right has the majority of its points in C. Therefore, as the algorithm \
+    iterates, each circle will have its own centroid."
 
     # type: int
-    answers["(b) Circle (a)"] = 0
+    answers["(b) Circle (a)"] = 1
 
     # type: int
-    answers["(b) Circle (b)"] = 0
+    answers["(b) Circle (b)"] = 1
 
     # type: int
-    answers["(b) Circle (c)"] = 0
+    answers["(b) Circle (c)"] = 1
 
     # type: explanatory string (at least four words)
-    answers["(b) explain"] = ""
+    answers["(b) explain"] = "Centroid A will keep its original centroid. The right centroid will have a \
+    majority of its points in circle C (because there are 100,000 points there) and \
+    will become the centroid of C and the middle centroid will stay in B. "
 
     # type: int
-    answers["(c) Circle (a)"] = 0
+    answers["(c) Circle (a)"] = 1
 
     # type: int
     answers["(c) Circle (b)"] = 0
 
     # type: int
-    answers["(c) Circle (c)"] = 0
+    answers["(c) Circle (c)"] = 2
 
     # type: explanatory string (at least four words)
-    answers["(c) explain"] = ""
+    answers["(c) explain"] = "Since C has 100,000 points and A and B have 100, there aren't enough points \
+    in B to pull one of C's original centroids away."
 
     return answers
 
@@ -188,16 +193,18 @@ def question5():
     answers = {}
 
     # type: set
-    answers["(a)"] = set()
+    answers["(a)"] = set({"A", "B"})
 
     # type: explanatory string (at least four words)
-    answers["(a) explain"] = ""
+    answers["(a) explain"] = "The minimum distance between any point in A and B is much smaller than the \
+    minimum distance between any other groups. Thus, A and B merge."
 
     # type: set
-    answers["(b)"] = set()
+    answers["(b)"] = set({"A", "C"})
 
     # type: explanatory string (at least four words)
-    answers["(b) explain"] = ""
+    answers["(b) explain"] = "The maximum distance between any point in A and C is much smaller than the \
+    maximum distance between any other groups. Thus, A and C merge."
 
     return answers
 
@@ -209,25 +216,25 @@ def question6():
     answers = {}
 
     # type: set
-    answers["(a) core"] = set()
+    answers["(a) core"] = set({"C", "F"})
 
     # type: set
-    answers["(a) boundary"] = set()
+    answers["(a) boundary"] = set({"D", "E", "B", "G"})
 
     # type: set
-    answers["(a) noise"] = set()
+    answers["(a) noise"] = set("A", "H", "I", "J", "L", "M")
+
+    # type: set ***********************************************************************************************
+    answers["(b) cluster 1"] = set({"D", "E", "B"})
+
+    # type: set ***********************************************************************************************
+    answers["(b) cluster 2"] = set({"G"})
 
     # type: set
-    answers["(b) cluster 1"] = set()
+    answers["(b) cluster 3"] = set({})
 
     # type: set
-    answers["(b) cluster 2"] = set()
-
-    # type: set
-    answers["(b) cluster 3"] = set()
-
-    # type: set
-    answers["(b) cluster 4"] = set()
+    answers["(b) cluster 4"] = set({})
 
     # type: set
     answers["(c)-a core"] = set()
