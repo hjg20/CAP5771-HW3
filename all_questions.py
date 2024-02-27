@@ -59,30 +59,30 @@ def question1():
     measure by the SSB of clusters. Therefore, as SSB increases, separation increases."
 
     # type: bool (True/False)
-    answers["(g)"] = True
+    answers["(g)"] = False
 
     # type: explanatory string (at least four words)
     answers["(g) explain"] = "Cohesion measures the inner cluster relations, whereas separation measures how \
     separated a cluster is from other clusters. If the cohesion in a cluster is \
     increased (i.e., the cluster is tightly formed around the centroid), the separation \
-    (i.e., the SSB from other clusters) does not necessarily increase as well."
+    (i.e., the SSB from other clusters) does not necessarily increase as well." ##
 
     # type: bool (True/False)
-    answers["(h)"] = False
+    answers["(h)"] = True
 
     # type: explanatory string (at least four words)
     answers["(h) explain"] = "As the kmeans alogrithm interates, cluster shapes change and can thus be smaller and \
     more concise, or be more separated from eachother. Due to this, SSE+BSS does not \
-    stay they same throughout the algorithm and thus is not a constant."
+    stay they same throughout the algorithm and thus is not a constant." ##
 
     # type: bool (True/False)
-    answers["(i)"] = False
+    answers["(i)"] = True
 
     # type: explanatory string (at least four words)
     answers["(i) explain"] = "Cohesion measures the inner cluster relations, whereas separation measures how \
     separated a cluster is from other clusters. If the cohesion in a cluster is \
     increased (i.e., the cluster is tightly formed around the centroid), the separation \
-    (i.e., the SSB from other clusters) does not necessarily increase as well."
+    (i.e., the SSB from other clusters) does not necessarily increase as well." ##
 
     return answers
 
@@ -171,7 +171,7 @@ def question4():
     will become the centroid of C and the middle centroid will stay in B. "
 
     # type: int
-    answers["(c) Circle (a)"] = 1
+    answers["(c) Circle (a)"] = 0
 
     # type: int
     answers["(c) Circle (b)"] = 0
@@ -181,7 +181,7 @@ def question4():
 
     # type: explanatory string (at least four words)
     answers["(c) explain"] = "Since C has 100,000 points and A and B have 100, there aren't enough points \
-    in B to pull one of C's original centroids away."
+    in B to pull one of C's original centroids away." ##
 
     return answers
 
@@ -193,14 +193,14 @@ def question5():
     answers = {}
 
     # type: set
-    answers["(a)"] = set({"A", "B"})
+    answers["(a)"] = set({"Group A", "Group B"})
 
     # type: explanatory string (at least four words)
     answers["(a) explain"] = "The minimum distance between any point in A and B is much smaller than the \
     minimum distance between any other groups. Thus, A and B merge."
 
     # type: set
-    answers["(b)"] = set({"A", "C"})
+    answers["(b)"] = set({"Group A", "Group C"})
 
     # type: explanatory string (at least four words)
     answers["(b) explain"] = "The maximum distance between any point in A and C is much smaller than the \
@@ -267,13 +267,13 @@ def question7():
     answers = {}
 
     # type: string
-    answers["(a)"] = ""
+    answers["(a)"] = "Cluster 4"
 
     # type: explanatory string (at least four words)
     answers["(a) explain"] = ""
 
     # type: string
-    answers["(b)"] = ""
+    answers["(b)"] = "Cluster 1"
 
     # type: explanatory string (at least four words)
     answers["(b) explain"] = ""
@@ -288,7 +288,7 @@ def question8():
     answers = {}
 
     # type: string
-    answers["(a) Matrix 1"] = ""
+    answers["(a) Matrix 1"] = "Dataset Z"
 
     # type: explanatory string (at least four words)
     answers["(a) explain diag entries, Matrix 1"] = ""
@@ -297,7 +297,7 @@ def question8():
     answers["(a) explain non-diag entries, Matrix 1"] = ""
 
     # type: string
-    answers["(a) Matrix 2"] = ""
+    answers["(a) Matrix 2"] = "Dataset X"
 
     # type: explanatory string (at least four words)
     answers["(a) explain diag entries, Matrix 2"] = ""
@@ -306,7 +306,7 @@ def question8():
     answers["(a) explain non-diag entries, Matrix 2"] = ""
 
     # type: string
-    answers["(a) Matrix 3"] = ""
+    answers["(a) Matrix 3"] = "Dataset Y"
 
     # type: explanatory string (at least four words)
     answers["(a) explain diag entries, Matrix 3"] = ""
@@ -315,16 +315,16 @@ def question8():
     answers["(a) explain non-diag entries, Matrix 3"] = ""
 
     # type: string
-    answers["(b) Row 1"] = ""
+    answers["(b) Row 1"] = "Cluster A"
 
     # type: string
-    answers["(b) Row 2"] = ""
+    answers["(b) Row 2"] = "Cluster B"
 
     # type: string
-    answers["(b) Row 3"] = ""
+    answers["(b) Row 3"] = "Cluster C"
 
     # type: string
-    answers["(b) Row 4"] = ""
+    answers["(b) Row 4"] = "Cluster D"
 
     # type: explanatory string (at least four words)
     answers["(b) Row 1 explain"] = ""
@@ -348,19 +348,19 @@ def question9():
     answers = {}
 
     # type: list
-    answers["(a)"] = []
+    answers["(a)"] =  ['Hierarchical', 'overlapping', 'partial']
 
     # type: list
-    answers["(b)"] = []
+    answers["(b)"] = ['Partitional', 'exclusive', 'complete']
 
     # type: list
-    answers["(c)"] = []
+    answers["(c)"] = ['Partitional', 'fuzzy', 'complete']
 
     # type: list
-    answers["(d)"] = []
+    answers["(d)"] = ['Hierarchical', 'overlapping', 'partial']
 
     # type: list
-    answers["(e)"] = []
+    answers["(e)"] = ['Partitional', 'Exclusive', 'partial']
 
     # type: explanatory string (at least four words)
     answers["(e) explain"] = ""
@@ -375,19 +375,19 @@ def question10():
     answers = {}
 
     # type: string
-    answers["(a) Figure (a)"] = ""
+    answers["(a) Figure (a)"] = "No"
 
     # type: string
-    answers["(a) Figure (b)"] = ""
+    answers["(a) Figure (b)"] = "Yes"
 
     # type: explanatory string (at least four words)
     answers["(a) explain"] = ""
 
     # type: string
-    answers["(b) Figure (a)"] = ""
+    answers["(b) Figure (a)"] = "No"
 
     # type: string
-    answers["(b) Figure (b)"] = ""
+    answers["(b) Figure (b)"] = "Yess"
 
     # type: explanatory string (at least four words)
     answers["(b) explain"] = ""
