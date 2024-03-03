@@ -1,5 +1,6 @@
 # Add import files
 import pickle
+import math
 
 
 
@@ -63,17 +64,16 @@ def question1():
 
     # type: explanatory string (at least four words)
     answers["(g) explain"] = "Cohesion measures the inner cluster relations, whereas separation measures how \
-    separated a cluster is from other clusters. If the cohesion in a cluster is \
-    increased (i.e., the cluster is tightly formed around the centroid), the separation \
-    (i.e., the SSB from other clusters) does not necessarily increase as well." ##
+    separated a cluster is from other clusters. The K-means algorithm optimizes cluster assignments and by doing so \
+    can increase both separation and cohesion simultaneously."
 
     # type: bool (True/False)
     answers["(h)"] = True
 
     # type: explanatory string (at least four words)
     answers["(h) explain"] = "As the kmeans alogrithm interates, cluster shapes change and can thus be smaller and \
-    more concise, or be more separated from eachother. Due to this, SSE+BSS does not \
-    stay they same throughout the algorithm and thus is not a constant." ##
+    more concise, or be more separated from eachother. As they do so, the SSE and BSS are changed proportional to one \
+    another and thus have the sum of a constant."
 
     # type: bool (True/False)
     answers["(i)"] = True
@@ -82,7 +82,7 @@ def question1():
     answers["(i) explain"] = "Cohesion measures the inner cluster relations, whereas separation measures how \
     separated a cluster is from other clusters. If the cohesion in a cluster is \
     increased (i.e., the cluster is tightly formed around the centroid), the separation \
-    (i.e., the SSB from other clusters) does not necessarily increase as well." ##
+    (i.e., the SSB from other clusters) will increase due SSE and BSS increasing/decreasing proportional to one another."
 
     return answers
 
@@ -128,7 +128,7 @@ def question3():
     answers["(a) SSE"] = "4*(R**2)"
 
     # type: a string that evaluates to a float
-    answers["(b) SSE"] = "((a**2)+(b-r)**2)+(((a+r)**2)+(b**2))+((a**2)+(b+r)**2)+(((a-r)**2)+(b**2))"
+    answers["(b) SSE"] = "((a**2)+(b-R)**2)+(((a+R)**2)+(b**2))+((a**2)+(b+R)**2)+(((a-R)**2)+(b**2))"
 
     # type: a string that evaluates to a float
     answers["(c) SSE"] = "(2*(R/2)**2)+(2*(3*R/2)**2)+(4*(((R/2)**2)+(R**2)))"
@@ -181,7 +181,7 @@ def question4():
 
     # type: explanatory string (at least four words)
     answers["(c) explain"] = "Since C has 100,000 points and A and B have 100, there aren't enough points \
-    in B to pull one of C's original centroids away." ##
+    in B to pull one of C's original centroids away. Therefore, there will be a centroid in between A and B and 2 centroids in C."
 
     return answers
 
@@ -264,19 +264,32 @@ def question6():
 
 # -----------------------------------------------------------
 def question7():
+
+    def entropy(cluster_counts):
+        total_points = sum(cluster_counts)
+        entropy = -sum((count / total_points) * math.log2(count / total_points) for count in cluster_counts if count > 0)
+        return entropy
+
+    cluster1 = [10, 100, 20, 10, 30000]
+    cluster2 = [3000,10,1000,10,0]
+    cluster3 = [10,3000,500,150,200]
+    cluster4 = [2000,2500,1500,3000,1400]
+
+    #print(entropy(cluster1), entropy(cluster2), entropy(cluster3), entropy(cluster4))
+
     answers = {}
 
     # type: string
     answers["(a)"] = "Cluster 4"
 
     # type: explanatory string (at least four words)
-    answers["(a) explain"] = ""
+    answers["(a) explain"] = "Cluster 4 has an entropy of 2.262 which is higher than the entropies of the other clusters (0.049, 0.857, 1.090)"
 
     # type: string
     answers["(b)"] = "Cluster 1"
 
     # type: explanatory string (at least four words)
-    answers["(b) explain"] = ""
+    answers["(b) explain"] = "Cluster 1 has an entropy of 0.049 which is lower than the entropies of the other clusters (0.857, 1.09, 2.262)"
 
     return answers
 
@@ -291,28 +304,37 @@ def question8():
     answers["(a) Matrix 1"] = "Dataset Z"
 
     # type: explanatory string (at least four words)
-    answers["(a) explain diag entries, Matrix 1"] = ""
+    answers["(a) explain diag entries, Matrix 1"] = "The diagonal entries of Matrix 1 are very solid and dark blue, indicating very low \
+    distances among points in each cluster (lots of cohesion, small SSE). Dataset Z has an equal looking SSE for each cluster, as shown in Matrix 1."
 
     # type: explanatory string (at least four words)
-    answers["(a) explain non-diag entries, Matrix 1"] = ""
+    answers["(a) explain non-diag entries, Matrix 1"] = "The colors of the non-diagonal entries of Matrix 1 seem to be consitently bright \
+    colors for each cluster. Therefore, this implies that the clusters are separated from one another very consistently. Also, we see \
+    that 2 clusters have the same distance from another 2 clusters, concluding that this matches Dataset Z."
 
     # type: string
     answers["(a) Matrix 2"] = "Dataset X"
 
     # type: explanatory string (at least four words)
-    answers["(a) explain diag entries, Matrix 2"] = ""
+    answers["(a) explain diag entries, Matrix 2"] = "For the diagonal entries of Matrix 2, the middle two cubes \
+    look to have the most cohesion due to their solid blue color, with 2 clustters having a bit less cohesion. We see this in both \
+    dataset X and Y."
 
     # type: explanatory string (at least four words)
-    answers["(a) explain non-diag entries, Matrix 2"] = ""
+    answers["(a) explain non-diag entries, Matrix 2"] = "For the non-diagonal entries of Matrix 2, we see that row 1 is closest to row 2, row 2 is closest \
+    to row 1 and row 3, row 3 is closest to row 2 and row 4, and row 4 is closest to row 3. We see distance of clusters in a sequence only in dataset X."
 
     # type: string
     answers["(a) Matrix 3"] = "Dataset Y"
 
     # type: explanatory string (at least four words)
-    answers["(a) explain diag entries, Matrix 3"] = ""
+    answers["(a) explain diag entries, Matrix 3"] = "For the diagonal entries of Matrix 3, the middle two cubes \
+    look to have the most cohesion due to their solid blue color, with 2 clustters having a bit less cohesion. We see this in both \
+    dataset X and Y."
 
     # type: explanatory string (at least four words)
-    answers["(a) explain non-diag entries, Matrix 3"] = ""
+    answers["(a) explain non-diag entries, Matrix 3"] = "Similar to matrix 1, we see that 2 clusters have the same distance from another 2 \
+    clusters. The dataset match both this description and the weakly cohesive diagonals is dataset Y."
 
     # type: string
     answers["(b) Row 1"] = "Cluster A"
@@ -327,16 +349,18 @@ def question8():
     answers["(b) Row 4"] = "Cluster D"
 
     # type: explanatory string (at least four words)
-    answers["(b) Row 1 explain"] = ""
+    answers["(b) Row 1 explain"] = "Row 1 is cluster A due to its low cohesion and grainy non-diagonal columns. It's also closest to row 2."
 
     # type: explanatory string (at least four words)
-    answers["(b) Row 2 explain"] = ""
+    answers["(b) Row 2 explain"] = "Row 2 is cluster B due to its high cohesion and grainy non-diagonal columns only with row 1 and 4, but not row 3. \
+    Also, it's equidistance from row 1 and row 3."
 
     # type: explanatory string (at least four words)
-    answers["(b) Row 3 explain"] = ""
+    answers["(b) Row 3 explain"] = "Row 3 is cluster C due to its high cohesion and grainy non-diagonal columns only with row 1 and 4, but not row 2. \
+    Also, it's equidistance from row 2 and row 4. "
 
     # type: explanatory string (at least four words)
-    answers["(b) Row 4 explain"] = ""
+    answers["(b) Row 4 explain"] = "Row 4 is cluster D due to its low cohesion and grainy non-diagonal columns. It's also closest to row 3."
 
     return answers
 
@@ -363,7 +387,9 @@ def question9():
     answers["(e)"] = ['Partitional', 'Exclusive', 'partial']
 
     # type: explanatory string (at least four words)
-    answers["(e) explain"] = ""
+    answers["(e) explain"] = "This clustering is partitional, as each cluster (letter grade) is individual of one another and don't overlap. This is exclusive \
+    because each student is assigned to only one cluster, they can't have more than one grade in the course. Finally, the clustering is partial \
+    because not all students in the Computer Science department have taken (or will take) CSci 5523."
 
     return answers
 
@@ -381,19 +407,25 @@ def question10():
     answers["(a) Figure (b)"] = "Yes"
 
     # type: explanatory string (at least four words)
-    answers["(a) explain"] = ""
+    answers["(a) explain"] = "DBSCAN looks for clusters of high densities. Therefore, DBSCAN would classsifiy the face in figure (a) as a cluster \
+    but wouldn't classify the eyes, nose, and mouth as clusters. However, in figure (b) the eyes, nose, and mouth are of high density and \
+    thus will be classifies as clusters."
 
     # type: string
     answers["(b) Figure (a)"] = "No"
 
     # type: string
-    answers["(b) Figure (b)"] = "Yess"
+    answers["(b) Figure (b)"] = "Yes"
 
     # type: explanatory string (at least four words)
-    answers["(b) explain"] = ""
+    answers["(b) explain"] = "For K-means, if you started with centroids inside the eyes, mouth, and nose of the face in figure (a), you \
+    still wouldn't be able to classify these facial features due to the high number of points around them. However, in figure (b), if you \
+    intialized centroids in the eyes, mouth, and nose of the face, you could find patterns represented by these features due to the high \
+    number of points in those regions."
 
     # type: string
-    answers["(c)"] = ""
+    answers["(c)"] = "We could use DBSCAN, but alter the algorithm slightly. We could take the densities calculated but perform 1/density. \
+    Therefore, areas with high density are represented as having low after the augmentation and low density areas appear higher."
 
     return answers
 
